@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-api-development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test-api
+    spec:
+      containers:
+      - env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        image: test.api
+        imagePullPolicy: ""
+        name: test-api-development
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+      imagePullSecrets:
+      - name: regcred
+status: {}

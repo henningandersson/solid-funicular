@@ -1,0 +1,10 @@
+Project RoundhousE används för Datamigrations
+https://github.com/chucknorris/roundhouse
+
+Install RoundhousE
+------------------
+With nuget...
+install-package roundhouse
+
+With chocolatey...
+cinst roundhouse
